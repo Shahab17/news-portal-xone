@@ -30,7 +30,7 @@ const getCategoryId = async (categoryID) => {
 
     idData.forEach((news) => {
 
-        const div = document.createElement('div');
+    const div = document.createElement('div');
         div.innerHTML = `
     <div class="card card-compact bg-red-50 shadow-xl">
     <figure><img src="${news.image_url} " /></figure>
@@ -38,7 +38,7 @@ const getCategoryId = async (categoryID) => {
 
         <div class = "flex justify-between">
         <h2 class="card-title">${news?.title.slice(0, 30)}</h2>
-        <button class="btn bg-orange-300 rounded-full">${news?.rating?.badge}</button>
+        <button class=" btn text-blue-700 border-1 border-blue-700 rounded-full">${news?.rating?.badge}</button>
         </div>
 
         <p> ${news?.details.slice(0, 100)}</p>
@@ -46,14 +46,14 @@ const getCategoryId = async (categoryID) => {
 
        
         <div class="flex justify-between items-center">
-            <div class="flex gap-5 mt-7">
+            <div class="flex items-center gap-3 mt-7">
                 <img class="w-[60px] rounded-full " src="${news?.author.img} " /> 
                 <div>
-                <h3 class="text-xl">${news.author.name}</h3>
+                <h3 class="">${news.author.name}</h3>
                 <small>${news.author.published_date}</small>
                 </div> 
             </div>
-            <button class="btn btn-primary">Buy Now</button>
+            <button class="btn text-xl rounded-xl bg-gradient-to-r from-cyan-50 to-blue-700">Details</button>
         </div>
       
          
@@ -74,3 +74,4 @@ const getCategoryId = async (categoryID) => {
 
 
 newsAllCategoriesData();
+getCategoryId('01')
